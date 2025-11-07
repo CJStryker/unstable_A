@@ -1,20 +1,360 @@
-<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1"><html><body>
-<style>body{margin:1.5em 4em 1.5em 4em;background:radial-gradient(#f80, #cc8, #e74);font-size:1.1em;font-family:sans-serif}h2,p{border-radius:10px;padding:1em;width:85%}h2{background:#fe9;color:#943;border:2px solid #ea7}p{background:#fdc;border:2px solid #c88;text-align:left}</style><center>
-<h2>AI in cybersec</h2>
-  <p>AI is revolutionizing the field of cybersecurity by enhancing the capabilities of antivirus software. By leveraging advanced algorithms and machine learning techniques, these solutions can detect and respond to threats more effectively than traditional methods. This proactive approach helps protect systems from a wide range of cyber threats in real-time.</p>
-<p style="display:inline-block">AI enhances antivirus software in several ways:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI in Cybersecurity</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --gradient-bg: radial-gradient(circle at top left, #ffe3c2 0%, #ffb86c 45%, #ff7043 100%);
+        --text-dark: #301503;
+        --text-muted: #543622;
+        --surface: rgba(255, 255, 255, 0.86);
+        --surface-strong: rgba(255, 255, 255, 0.96);
+        --accent: #884800;
+        --accent-strong: #4b2500;
+        --accent-soft: #ffe7cc;
+        --border-radius: 18px;
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      }
 
-    Behavioral Analysis: AI detects suspicious application behavior, identifying threats beyond known virus signatures.
+      * {
+        box-sizing: border-box;
+      }
 
-    Machine Learning: Trained on large datasets, AI recognizes patterns in malware, allowing for the identification of new threats.
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--gradient-bg);
+        color: var(--text-dark);
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        padding: clamp(1.5rem, 2vw + 1rem, 4rem);
+      }
 
-    Real-time Detection: AI monitors systems in real-time, enabling quick responses to emerging threats.
+      main {
+        max-width: 1080px;
+        width: 100%;
+        background: var(--surface);
+        border-radius: calc(var(--border-radius) + 6px);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 25px 65px rgba(82, 36, 6, 0.25);
+        overflow: hidden;
+      }
 
-    Phishing Detection: AI analyzes emails and websites to identify potential phishing attempts.
+      header {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 225, 187, 0.8));
+        padding: clamp(2.5rem, 5vw, 4rem);
+        display: grid;
+        gap: 1.5rem;
+      }
 
-    Automated Response: Some AI solutions can automatically quarantine or remove threats, reducing user intervention.
+      header h1 {
+        margin: 0;
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        letter-spacing: 0.02em;
+        color: var(--accent-strong);
+      }
 
-    Predictive Capabilities: AI predicts vulnerabilities based on historical data, helping organizations address security gaps proactively.
+      header p {
+        margin: 0;
+        font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+        color: var(--text-muted);
+        line-height: 1.75;
+      }
 
-If you want to explore more about cybersecurity or antivirus solutions, feel free to ask!
-</body></html>
+      header .cta {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .cta a {
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        padding: 0.9rem 1.6rem;
+        border-radius: 999px;
+        font-weight: 600;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 15px 30px rgba(163, 77, 3, 0.3);
+      }
+
+      .cta a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 36px rgba(122, 57, 0, 0.32);
+      }
+
+      .cta span {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      section {
+        padding: clamp(2.25rem, 4vw, 3.5rem);
+        display: grid;
+        gap: 2.75rem;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .pill {
+        background: var(--accent-soft);
+        color: var(--accent-strong);
+        padding: 0.5rem 1.1rem;
+        border-radius: 999px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .content-grid {
+        display: grid;
+        gap: 1.75rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      article {
+        background: var(--surface-strong);
+        border-radius: var(--border-radius);
+        padding: 1.75rem;
+        display: grid;
+        gap: 0.85rem;
+        border: 1px solid rgba(243, 164, 92, 0.4);
+        box-shadow: 0 16px 28px rgba(88, 36, 6, 0.12);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      article:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 36px rgba(80, 28, 4, 0.18);
+      }
+
+      article h3 {
+        margin: 0;
+        font-size: 1.25rem;
+        color: var(--accent-strong);
+      }
+
+      article p {
+        margin: 0;
+        line-height: 1.7;
+        color: var(--text-muted);
+      }
+
+      .stat-grid {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+
+      .stat {
+        padding: 1.2rem;
+        border-radius: var(--border-radius);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 210, 170, 0.92));
+        border: 1px solid rgba(255, 176, 106, 0.4);
+        text-align: center;
+        display: grid;
+        gap: 0.4rem;
+      }
+
+      .stat strong {
+        font-size: 2rem;
+        letter-spacing: 0.01em;
+        color: var(--accent-strong);
+      }
+
+      .stat span {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 1.5rem;
+        border-left: 3px solid rgba(187, 100, 20, 0.35);
+        padding-left: 1.5rem;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 0.5rem;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -1.65rem;
+        top: 0.4rem;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border: 3px solid rgba(194, 97, 12, 0.8);
+        border-radius: 50%;
+      }
+
+      .timeline-item h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--accent-strong);
+      }
+
+      .timeline-item p {
+        margin: 0.35rem 0 0;
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+
+      footer {
+        padding: 2.25rem;
+        text-align: center;
+        background: rgba(255, 245, 230, 0.88);
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      footer a {
+        color: var(--accent-strong);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 1.25rem;
+        }
+
+        header {
+          padding: 2.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>AI in Cybersecurity</h1>
+        <p>
+          Artificial intelligence is transforming how modern security teams anticipate
+          and mitigate threats. Advanced antivirus platforms now combine machine
+          learning, behavioral analytics, and automated response playbooks to detect
+          sophisticated attacks before they cause damage.
+        </p>
+        <div class="pill-row" aria-label="Top focus areas">
+          <span class="pill">Real-time defense</span>
+          <span class="pill">Malware intelligence</span>
+          <span class="pill">Behavior analytics</span>
+          <span class="pill">Automated response</span>
+        </div>
+        <div class="cta">
+          <a href="#capabilities">Explore capabilities</a>
+          <span>Discover why AI-first security is redefining digital resilience.</span>
+        </div>
+      </header>
+
+      <section id="capabilities" aria-label="AI-driven capabilities">
+        <div class="content-grid">
+          <article>
+            <h3>Behavioral Analysis</h3>
+            <p>
+              AI models profile application activity, user journeys, and system calls
+              to flag deviations that reveal unknown malware or insider threats before
+              signature-based tools react.
+            </p>
+          </article>
+          <article>
+            <h3>Adaptive Machine Learning</h3>
+            <p>
+              Continuously trained models ingest millions of malware samples, emails,
+              and network flows to identify emerging patterns and predict exploits with
+              growing accuracy.
+            </p>
+          </article>
+          <article>
+            <h3>Phishing Intelligence</h3>
+            <p>
+              Natural language processing and computer vision score inbound messages
+              and URLs, filtering spoofed domains and weaponized attachments within
+              seconds of arrival.
+            </p>
+          </article>
+          <article>
+            <h3>Autonomous Response</h3>
+            <p>
+              Automated workflows isolate compromised endpoints, roll back malicious
+              changes, and generate analyst-ready reports for rapid remediation.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-label="Impact metrics and adoption">
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>92%</strong>
+            <span>Threats detected before data exfiltration events.</span>
+          </div>
+          <div class="stat">
+            <strong>4×</strong>
+            <span>Faster containment once automated playbooks are enabled.</span>
+          </div>
+          <div class="stat">
+            <strong>68%</strong>
+            <span>Reduction in phishing incidents through AI email filtering.</span>
+          </div>
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Continuous monitoring across hybrid and multi-cloud estates.</span>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Roadmap for AI-enabled security maturity">
+        <h2 style="margin:0;color:var(--accent-strong);font-size:1.85rem">Maturity Roadmap</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>1. Visibility</h4>
+            <p>
+              Inventory assets, centralize telemetry, and baseline normal behavior to
+              give AI engines a rich context for learning.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>2. Augmented Detection</h4>
+            <p>
+              Deploy machine learning models that surface anomalies and enrich alerts
+              with threat intelligence for security operations teams.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>3. Automated Response</h4>
+            <p>
+              Combine AI with SOAR playbooks to orchestrate containment steps, notify
+              stakeholders, and document actions in real time.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>4. Autonomous Defense</h4>
+            <p>
+              Enable self-healing networks that predict, prevent, and adapt to attacks
+              with minimal human intervention while preserving oversight.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        Want to go deeper? Explore emerging guidance from the
+        <a href="https://www.cisa.gov" target="_blank" rel="noopener">Cybersecurity &amp; Infrastructure Security Agency</a>
+        or connect with your security operations center to assess AI readiness.
+      </footer>
+    </main>
+  </body>
+</html>
